@@ -1,0 +1,127 @@
+@startuml
+skinparam class {
+   BackgroundColor<<java>> Wheat
+   BorderColor<<java>> Tomato
+}
+
+hide stereotype
+
+package "modele" {
+    class String
+    interface Iterable{
+        + Iterator<Article> iterator()
+    }
+
+    class Article{
+        - String nom
+        - double prix
+        - String imgUrl
+        - boolean disponible
+        - String descript
+        + Article(String nom, double prix, String imgUrl, boolean disponible, String descript, Categorie categorie, String... motsCles)
+        + void setNom(String nom)
+        + void setPrix(double prix)
+        + void setDescription(String description)
+        + void setDisponibilite(boolean b)
+        + void setImgUrl(String imgUrl)
+        + void ajouterMotsCles(String... motsCles)
+        + void supprimerMotCle(String cle)
+    }
+
+    enum Categorie {
+        Plat
+        Accompagnement
+        Dessert
+        Boisson
+    }
+
+    class Facade extends SujetObserve implements Iterable<Article>{
+        + void ajouter(String nom, double prix, String imgUrl, boolean disponible, String descript, Categorie categorie, String... motsCles)
+        + void supprimer(Article article)
+        + void setCategorieSelectionnee(String categorie)
+        + Article getArticleCourant()
+        + void precedent()
+        + void suivant()
+        + void setModeEdition()
+        + Iterator<Article> iterator()
+        + Iterator<Article> iteratorFiltres()
+
+    }
+
+    class CollectionArticle {
+        - boolean modeEdition
+        - int indexArticleCourant
+        + CollectionArticle()
+        + void ajouter(Article article)
+        + void supprimer(Article article)
+        + void setCategorieSelectionnee(Categorie categorie)
+        + void setIndexArticleCourant(int index)
+        + void setModeEdition()
+        + int getIndexArticleCourant()
+        + Article getArticleCourant()
+        + List<Article> getArticlesFiltres()
+
+    }
+
+    class SujetObserve{
+        + void ajouterObservateur(Observateur obs)
+        + void notifierObservateur()
+    }
+
+}
+
+package "vues" {
+    class TextField<<java>>
+    class TextArea<<java>>
+    class CheckBox<<java>>
+    interface Observateur {
+        + void reagir()
+    }
+
+    class VueCategorie {
+        + VueCategorie(Facade facade)
+        + void reagir()
+        + setCategorieToPlat()
+        + setCategorieToBoisson()
+        + setCategorieToAccompagnement()
+        + setCategorieToDessert()
+    }
+    class VueGlobale {
+        + void reagir()
+    }
+    class VueDetaillee {
+        + VueDetaillee(Facade facade)
+        + void reagir()
+        + void precedent()
+        + void suivant()
+        + void home()
+        + void modeEdition()
+        + void EnregistrerArticle()
+    }
+
+    class VignetteArticle{
+            + VignetteArticle(Facade facade, Article article)
+            + void reagir()
+            + void handleClick()
+            - void supprimerArticle()
+            - void detaillerArticle()
+        }
+
+}
+Article --"1" Categorie
+Article --"*" String : motCles
+CollectionArticle --"1" Categorie
+CollectionArticle --"*" Article
+Facade --"1" CollectionArticle
+SujetObserve "1" -- "*" Observateur
+Observateur <|.. VueCategorie
+Observateur <|.. VignetteArticle
+Observateur <|.. VueGlobale
+Observateur <|.. VueDetaillee
+VueDetaillee --"3" TextField
+VueDetaillee --"1" TextArea
+VueDetaillee --"1" CheckBox
+
+
+
+@enduml

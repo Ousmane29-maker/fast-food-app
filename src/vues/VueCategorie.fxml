@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="207.0" spacing="30.0" styleClass="vue-categorie" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueCategorie">
+   <children>
+      <Label id="labelCategorie" styleClass="vue-categorie-label" text="Categorie" />
+      <Button id="ButtonPlat" mnemonicParsing="false" onMouseClicked="#setCategorieToPlat" text="Plat">
+         <styleClass>
+            <String fx:value="bouton-categorie" />
+            <String fx:value="selected" />
+         </styleClass>
+      </Button>
+      <Button id="ButtonAccompagnement" mnemonicParsing="false" onMouseClicked="#setCategorieToAccompagnement" styleClass="bouton-categorie" text="Accompagnement" />
+      <Button id="ButtonDessert" mnemonicParsing="false" onMouseClicked="#setCategorieToDessert" styleClass="bouton-categorie" text="Dessert" />
+      <Button id="ButtonBoisson" mnemonicParsing="false" onMouseClicked="#setCategorieToBoisson" styleClass="bouton-categorie" text="Boisson" />
+   </children>
+</VBox>
