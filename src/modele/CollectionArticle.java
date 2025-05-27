@@ -37,8 +37,8 @@ public class CollectionArticle implements Iterable<Article>{
 
     }
 
-    public void setModeEdition() {
-        this.modeEdition = !this.modeEdition;
+    public void setModeEdition(boolean b) {
+        this.modeEdition = b;
     }
 
     public int getIndexArticleCourant() {

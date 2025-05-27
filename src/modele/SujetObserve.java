@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class SujetObserve {
     ArrayList<Observateur> observateurs ;
     public SujetObserve(){
-
+        observateurs = new ArrayList<>() ;
     }
 
     public void notifierObservateur(){

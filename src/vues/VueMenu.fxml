@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.10"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueMenu">
+   <children>
+      <MenuBar prefHeight="28.0" prefWidth="750.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#importerJson" text="Importer JSON" />
+                  <MenuItem mnemonicParsing="false" onAction="#SauvegarderJson" text="Sauvegarder JSON" />
+                  <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Affichage">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#modeConsultation" text="Mode consultation" />
+                  <MenuItem fx:id="modeEditionItem" disable="true" mnemonicParsing="false" onAction="#modeEdition" text="Mode édition" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Données">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#trierParNom" text="Trier par nom" />
+                  <MenuItem mnemonicParsing="false" onAction="#trierParPrix" text="Trier par Prix" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</VBox>

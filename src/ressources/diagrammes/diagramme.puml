@@ -74,6 +74,8 @@ package "vues" {
     class TextField<<java>>
     class TextArea<<java>>
     class CheckBox<<java>>
+    class MenuItem<<java>>
+
     interface Observateur {
         + void reagir()
     }
@@ -106,6 +108,17 @@ package "vues" {
             - void supprimerArticle()
             - void detaillerArticle()
         }
+     class VueMenu{
+        + VueMenu(Facade facade)
+        + void reagir()
+        + void importerJson()
+        + void SauvegarderJson()
+        + void quitter()
+        + void modeConsultation()
+        + void modeEdition()
+        + void trierParNom()
+        + void trierParPrix()
+     }
 
 }
 Article --"1" Categorie
@@ -118,9 +131,11 @@ Observateur <|.. VueCategorie
 Observateur <|.. VignetteArticle
 Observateur <|.. VueGlobale
 Observateur <|.. VueDetaillee
+Observateur <|.. VueMenu
 VueDetaillee --"3" TextField
 VueDetaillee --"1" TextArea
 VueDetaillee --"1" CheckBox
+VueMenu --"1" MenuItem : modeEdition
 
 
 

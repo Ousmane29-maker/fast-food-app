@@ -19,6 +19,13 @@ public class VueGlobale implements Observateur {
         this.facade = facade ;
         facade.ajouterObservateur(this);
     }
+
+
+    @FXML
+    public void initialize(){
+        reagir();
+    }
+
     @Override
     public void reagir() {
         try {

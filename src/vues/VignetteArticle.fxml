@@ -9,18 +9,19 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="156.0" prefWidth="219.0" spacing="5.0" styleClass="vignette" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VignetteArticle">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="156.0" prefWidth="219.0" spacing="5.0" styleClass="vignette" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/17.0.10"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VignetteArticle">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Label id="labelNom" styleClass="vignette-label-nom" text="Burger" />
+            <Label fx:id="labelNom" styleClass="vignette-label-nom" text="Burger" />
             <Region prefHeight="26.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-            <Label id="labelPrix" styleClass="vignette-label-prix" text="5,99 €" />
+            <Label fx:id="labelPrix" styleClass="vignette-label-prix" text="5,99 €" />
          </children>
       </HBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <ImageView id="imageViewArticle" fitHeight="98.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageViewArticle" fitHeight="98.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/images/burger.png" />
                </image>

@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+
 import javafx.scene.input.MouseEvent;
 import modele.Article;
 import modele.Facade;
@@ -33,11 +33,11 @@ public class VignetteArticle implements Observateur {
         labelNom.setText(article.getNom());
         labelPrix.setText(String.format("%.2f €", article.getPrix()));
         try {
-            // Chargement à partir du dossier resources/images
-            Image image = new Image(getClass().getResourceAsStream("/images/" + article.getImgUrl()));
+            Image image = new Image(getClass().getResource(article.getImgUrl()).toExternalForm());
             imageViewArticle.setImage(image);
+
         } catch (Exception e) {
-            System.err.println("Erreur chargement image : " + e.getMessage());
+            System.err.println("Erreur chargement image : " + e.getMessage()); // on essayera de faire une alerte par la suite...
             // Image par défaut ou rien
             imageViewArticle.setImage(null);
         }
