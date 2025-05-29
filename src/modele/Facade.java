@@ -6,23 +6,36 @@ public class Facade extends SujetObserve implements Iterable<Article>{
     private CollectionArticle collectionArticle ;
     public Facade(){
         collectionArticle = new CollectionArticle() ;
-        //testssss
-//        ajouter("Burger Classique", 5.99, "../ressources/images/burger.png", true, "Un burger traditionnel savoureux", Categorie.PLAT, "classique", "traditionnel");
-//        ajouter("Burger Fromage", 6.49, "../ressources/images/burger.png", true, "Avec un fromage fondant", Categorie.PLAT, "fromage", "cheddar");
-//        ajouter("Burger Poulet", 6.99, "../ressources/images/burger.png", true, "Poulet croustillant et laitue", Categorie.PLAT, "poulet", "croustillant");
-//        ajouter("Burger Vegan", 7.49, "../ressources/images/burger.png", true, "Sans viande, riche en goût", Categorie.PLAT, "vegan", "sans viande");
-//        ajouter("Burger Double", 8.49, "../ressources/images/burger.png", true, "Deux steaks, deux fois plus de plaisir", Categorie.PLAT, "double", "viande");
-//        ajouter("Burger BBQ", 7.29, "../ressources/images/burger.png", true, "Sauce barbecue fumée", Categorie.PLAT, "bbq", "fumé");
-//        ajouter("Burger Bacon", 7.99, "../ressources/images/burger.png", true, "Avec du bacon croustillant", Categorie.PLAT, "bacon", "salé");
-//        ajouter("Burger Spicy", 6.89, "../ressources/images/burger.png", true, "Épicé comme il faut", Categorie.PLAT, "épicé", "piquant");
-//        ajouter("Burger Champignon", 6.79, "../ressources/images/burger.png", true, "Champignons grillés", Categorie.PLAT, "champignon", "végétarien");
-//        ajouter("Burger Fish", 7.59, "../ressources/images/burger.png", true, "Filet de poisson pané", Categorie.PLAT, "poisson", "mer");
-//        ajouter("Burger Bleu", 7.99, "../ressources/images/burger.png", true, "Avec du fromage bleu", Categorie.PLAT, "bleu", "fromage");
-//        ajouter("Burger Oeuf", 6.49, "../ressources/images/burger.png", true, "Ajout d’un œuf frais", Categorie.PLAT, "œuf", "brunch");
-//        ajouter("Burger Mexicain", 7.29, "../ressources/images/burger.png", true, "Saveurs tex-mex", Categorie.DESSERT, "mexicain", "tex-mex");
-//        ajouter("Burger Italien", 7.49, "../ressources/images/burger.png", true, "Tomate, mozzarella, pesto", Categorie.BOISSON, "italien", "basilic");
-//        ajouter("Burger Deluxe", 9.49, "../ressources/images/burger.png", true, "Version premium du burger", Categorie.BOISSON, "deluxe", "premium");
 
+        ajouter("Risotto Poulet", 11.60, "/images/plat_2.png", true, "Riz crémeux et tendre poulet", Categorie.PLAT, "riz", "poulet");
+        ajouter("Falafel", 7.40, "/images/falafel.png", true, "Boulettes végétariennes", Categorie.PLAT, "pois chiche", "végétarien");
+        ajouter("Nuggets", 6.99, "/images/nuggets.png", true, "Croquants et dorés", Categorie.PLAT, "poulet", "frit");
+        ajouter("Salade César", 7.50, "/images/saladcesar.png", true, "Salade romaine et poulet grillé", Categorie.PLAT, "salade", "poulet", "croutons");
+        ajouter("Risotto Crevette", 8.30, "/images/risottocrevette.png", true, "Épicé et savoureux", Categorie.PLAT, "curry", "végétarien");
+        ajouter("Veggie Wrap", 7.80, "/images/plat_1.png", true, "Wrap aux légumes grillés", Categorie.PLAT, "légumes", "wrap", "sans viande");
+        ajouter("Burger Poulet", 6.99, "/images/burger_poulet.png", true, "Poulet croustillant et laitue", Categorie.PLAT, "poulet", "croustillant");
+        ajouter("Cheeseburger", 7.99, "/images/cheeseburger.png", true, "Avec du bacon croustillant", Categorie.PLAT, "bacon", "salé");
+
+        ajouter("Petite Salade", 3.50, "/images/petitesalade.png", true, "Salade verte fraîche", Categorie.ACCOMPAGNEMENT, "salade", "légumes", "entrée");
+        ajouter("Coleslaw", 2.80, "/images/coleslaw.png", true, "Chou blanc râpé, sauce crémeuse", Categorie.ACCOMPAGNEMENT, "chou", "entrée");
+        ajouter("Salade Tomate", 3.90, "/images/saladetomate.png", true, "Tomates fraîches et basilic", Categorie.ACCOMPAGNEMENT, "tomate", "entrée");
+        ajouter("Taboulé", 3.60, "/images/taboule.png", true, "Semoule, menthe, citron", Categorie.ACCOMPAGNEMENT, "semoule", "fraîcheur");
+        ajouter("Frites", 2.50, "/images/frites.png", true, "Frites croustillantes", Categorie.ACCOMPAGNEMENT, "pommes de terre", "frit", "classique");
+
+        ajouter("Tarte", 4.5, "/images/tarte.png", true, "Tarte croustillante aux fruits de saison", Categorie.DESSERT, "fruit", "pâtisserie", "frais");
+        ajouter("Moelleux", 5.0, "/images/moelleux.png", true, "Gâteau fondant au chocolat noir", Categorie.DESSERT, "chocolat", "gâteau", "fondant");
+        ajouter("Cake", 3.2, "/images/cake.png", true, "Petit cake moelleux au citron", Categorie.DESSERT, "citron", "léger", "moelleux");
+        ajouter("Tiramisu", 5.2, "/images/tiramisu.png", true, "Tiramisu au café doux et mascarpone", Categorie.DESSERT, "café", "italien", "crémeux");
+        ajouter("Crumble", 4.1, "/images/crumble.png", true, "Crumble aux pommes caramélisées", Categorie.DESSERT, "pomme", "croquant", "fruit");
+        ajouter("Panna", 4.3, "/images/panna.png", true, "Panna cotta à la vanille et fruits rouges", Categorie.DESSERT, "fruit", "crémeux", "italien");
+        ajouter("Éclair", 3.9, "/images/eclair.png", true, "Éclair au chocolat fondant", Categorie.DESSERT, "chocolat", "pâtisserie", "gâteau");
+
+        ajouter("Virgin Mojito", 4.50, "/images/virginmojito.png", true, "Menthe, citron vert, eau pétillante", Categorie.BOISSON, "sans alcool", "menthe", "rafraîchissant");
+        ajouter("Sunset Punch", 5.20, "/images/sunsetpunch.png", true, "Jus d'orange, grenadine, fruits", Categorie.BOISSON, "fruité", "sans alcool");
+        ajouter("Berry Mix", 5.00, "/images/berrymix.png", true, "Fruits rouges mixés", Categorie.BOISSON, "baies", "cocktail", "frais");
+
+        ajouter("Ridged", 2.00, "/images/ridged.png", true, "Boisson gazeuse classique", Categorie.BOISSON, "cola", "canette", "gazeux");
+        ajouter("Peroni", 2.00, "/images/peroni.png", true, "Citron-lime pétillant", Categorie.BOISSON, "citron", "gazeux", "canette");
     }
 
 

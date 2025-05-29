@@ -1,5 +1,6 @@
 package vues;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
@@ -22,6 +23,7 @@ public class VueMenu implements Observateur{
     }
 
     public void quitter(ActionEvent actionEvent) {
+        Platform.exit();
     }
 
     public void modeConsultation(ActionEvent actionEvent) {
