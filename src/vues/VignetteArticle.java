@@ -28,29 +28,27 @@ public class VignetteArticle implements Observateur {
         this.article = article;
     }
 
+
     @FXML
     public void initialize() {
         labelNom.setText(article.getNom());
         labelPrix.setText(String.format("%.2f €", article.getPrix()));
+        Image image;
         try {
-            Image image = new Image(getClass().getResource(article.getImgUrl()).toExternalForm());
+            String url = article.getImgUrl();
+            if (url.startsWith("file:") || url.startsWith("http")) {
+                image = new Image(url);
+            } else {
+                image = new Image(getClass().getResource(url).toExternalForm());
+            }
             imageViewArticle.setImage(image);
-
         } catch (Exception e) {
-            System.err.println("Erreur chargement image : " + e.getMessage()); // on essayera de faire une alerte par la suite...
-            // Image par défaut ou rien
-            imageViewArticle.setImage(null);
+            System.err.println("Erreur image : " + article.getImgUrl());
+            e.printStackTrace();
+            imageViewArticle.setImage(new Image(getClass().getResource("/images/default_image.jpg").toExternalForm()));
         }
 
-    }
 
-    @FXML
-    public void handleClick(MouseEvent mouseEvent) {
-        // clic gauche affiche la vue détail
-        if (mouseEvent.isPrimaryButtonDown()) {
-            // déclencher la vue détaillée
-        }
-        // clic droit ? afficher menu contextuel (supprimer, etc)
     }
 
     @Override

@@ -60,9 +60,9 @@ public class CollectionArticleTest {
 
     @Test
     void testModeEdition() {
-        assertFalse(collection.isModeEdition());
+        assertFalse(collection.estModeEdition());
         collection.setModeEdition(true);
-        assertTrue(collection.isModeEdition());
+        assertTrue(collection.estModeEdition());
     }
 
     @Test

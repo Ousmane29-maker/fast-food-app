@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainContainer" prefHeight="550.0" prefWidth="600.0" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/17.0.10" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="140.0" spacing="8.0" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Image en mode consultation -->
+            <StackPane fx:id="imageContainer" prefWidth="200.0" prefHeight="150.0">
+               <ImageView fx:id="imageViewArticle" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" />
+
+               <!-- Bouton "+" en mode édition -->
+               <Button fx:id="changerImageButton"
+                       visible="false"
+                       onAction="#choisirImage"
+                       prefHeight="150.0"
+                       prefWidth="200.0"
+                       style="-fx-background-size: cover; -fx-background-position: center; -fx-background-radius: 10px; -fx-font-size: 36px; -fx-text-fill: white; -fx-background-color: rgba(0,0,0,0.3);"
+                       text="+">
+               </Button>
+            </StackPane>
+
+            <StackPane prefWidth="280.0">
+               <children>
+                  <VBox fx:id="consultationInfoBox" spacing="12.0" styleClass="article-infos" alignment="TOP_LEFT">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <Label text="Nom:" minWidth="90.0"><styleClass><String fx:value="info-label"/><String fx:value="product-name"/></styleClass></Label>
+                              <Label fx:id="nomLabel" text="Burger" maxWidth="180.0" wrapText="true"><styleClass><String fx:value="info-value"/><String fx:value="product-name"/></styleClass></Label>
+                           </children>
+                        </HBox>
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="90.0" styleClass="info-label" text="Description:"/>
+                              <Text fx:id="descriptionText" text="Tarte croustillante aux fruits de saison" wrappingWidth="260.0"/>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <Label text="Prix:" minWidth="90.0" styleClass="info-label" />
+                              <Label fx:id="prixLabel" text="5,99 €"/>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="editionInfoBox" spacing="8.0" styleClass="article-infos" visible="false" alignment="TOP_LEFT">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <Label text="Nom:" minWidth="90.0"><styleClass><String fx:value="info-label"/><String fx:value="info-label"/></styleClass></Label>
+                              <TextField fx:id="nomTextField" prefWidth="180.0" text="Burger"/>
+                           </children>
+                        </HBox>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label styleClass="info-label" text="Description:"/>
+                              <TextArea fx:id="descriptionTextArea" prefHeight="45.0" prefWidth="260.0" text="Tarte croustillante aux fruits de saison" wrapText="true"/>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <Label text="Prix:" minWidth="90.0" styleClass="info-label" />
+                              <TextField fx:id="prixTextField" prefWidth="90.0" text="5.99"/>
+                              <Label text="€"/>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </children>
+         <BorderPane.margin><Insets left="20.0" right="20.0" top="15.0"  bottom="15.0"/></BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <StackPane alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <VBox prefHeight="280.0" spacing="10.0" alignment="TOP_CENTER">
+            <children>
+               <HBox fx:id="categorieConsultationBox" alignment="CENTER" spacing="15.0">
+                  <children>
+                     <Label text="Categorie:" minWidth="90.0" styleClass="info-label" />
+                     <Label fx:id="categorieLabel" text="Dessert" styleClass="info-value"/>
+                  </children>
+               </HBox>
+               <HBox fx:id="categorieEditionBox" alignment="CENTER" spacing="15.0" visible="false">
+                  <children>
+                     <Label text="Categorie:" minWidth="90.0" styleClass="info-label" />
+                     <ComboBox fx:id="categorieComboBox" prefWidth="180.0"/>
+                  </children>
+               </HBox>
+               <HBox fx:id="motsClesConsultationBox" alignment="CENTER">
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Mots Clés:" styleClass="section-title" />
+                        <ListView fx:id="motsClesListView" prefHeight="150.0" prefWidth="220.0"/>
+                     </children>
+                  </VBox>
+               </HBox>
+               <VBox fx:id="motsClesEditionBox" alignment="CENTER" spacing="8.0" visible="false">
+                  <children>
+                     <VBox alignment="CENTER" spacing="8.0">
+                        <children>
+                           <Label text="Ajouter mot-clé:" styleClass="section-title"/>
+                           <HBox alignment="CENTER" spacing="8.0">
+                              <children>
+                                 <TextField fx:id="nouveauMotCleTextField" prefWidth="120.0" promptText="Nouveau"/>
+                                 <Label text="ou"/>
+                                 <ComboBox fx:id="motsClesComboBox" prefWidth="120.0" promptText="Existant"/>
+                                 <Button fx:id="ajouterMotCleButton" onAction="#ajouterMotCle" text="+" prefWidth="35.0"/>
+                              </children>
+                           </HBox>
+                        </children>
+                     </VBox>
+                     <VBox alignment="CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+                        <children>
+                           <Label text="Mots-clés actuels:" styleClass="section-title"/>
+                           <ListView fx:id="motsClesEditListView" prefHeight="130.0" prefWidth="300.0"/>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+            </children>
+            <VBox.margin><Insets top="10.0"/></VBox.margin>
+         </VBox>
+      </StackPane>
+   </center>
+   <bottom>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="navigationButtons" alignment="CENTER" spacing="20.0" visible="true">
+               <children>
+                  <Button fx:id="precedentButton" onAction="#precedent" text="Précédent" minWidth="90.0"/>
+                  <Button fx:id="homeButton" onAction="#home" text="Home" minWidth="90.0"/>
+                  <Button fx:id="suivantButton" onAction="#suivant" text="Suivant" minWidth="90.0"/>
+                  <Button fx:id="modifierButton" onAction="#basculerModeEdition" text="Modifier" minWidth="90.0"/>
+               </children>
+            </HBox>
+            <HBox fx:id="editionButtons" alignment="CENTER" spacing="25.0" visible="false">
+               <children>
+                  <Button fx:id="annulerButton" onAction="#annuler" styleClass="cancel-button" text="Annuler" minWidth="110.0"/>
+                  <Button fx:id="sauvegarderButton" onAction="#sauvegarder" styleClass="save-button" text="Sauvegarder" minWidth="110.0"/>
+               </children>
+            </HBox>
+         </children>
+         <StackPane.margin><Insets bottom="15.0"/></StackPane.margin>
+      </StackPane>
+   </bottom>
+</BorderPane>

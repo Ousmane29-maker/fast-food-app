@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.10"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueMenu">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.10"
+      xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <MenuBar prefHeight="28.0" prefWidth="750.0">
         <menus>
@@ -18,10 +18,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Affichage">
+          <Menu mnemonicParsing="false" text="Edition">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#modeConsultation" text="Mode consultation" />
-                  <MenuItem fx:id="modeEditionItem" disable="true" mnemonicParsing="false" onAction="#modeEdition" text="Mode édition" />
+              <MenuItem mnemonicParsing="false" onAction="#ajouterArticle" text="Ajouter une article" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Données">

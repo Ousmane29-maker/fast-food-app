@@ -3,6 +3,8 @@ package modele;
 import java.util.Iterator;
 
 public class Facade extends SujetObserve implements Iterable<Article>{
+    private boolean modeAjout = false;
+
     private CollectionArticle collectionArticle ;
     public Facade(){
         collectionArticle = new CollectionArticle() ;
@@ -15,6 +17,7 @@ public class Facade extends SujetObserve implements Iterable<Article>{
         ajouter("Veggie Wrap", 7.80, "/images/plat_1.png", true, "Wrap aux légumes grillés", Categorie.PLAT, "légumes", "wrap", "sans viande");
         ajouter("Burger Poulet", 6.99, "/images/burger_poulet.png", true, "Poulet croustillant et laitue", Categorie.PLAT, "poulet", "croustillant");
         ajouter("Cheeseburger", 7.99, "/images/cheeseburger.png", true, "Avec du bacon croustillant", Categorie.PLAT, "bacon", "salé");
+        ajouter("Veggie vert", 9.99, "/images/plat_3.png", true, "Salade romaine, oeuf et sauce tomate", Categorie.PLAT, "bacon", "salé");
 
         ajouter("Petite Salade", 3.50, "/images/petitesalade.png", true, "Salade verte fraîche", Categorie.ACCOMPAGNEMENT, "salade", "légumes", "entrée");
         ajouter("Coleslaw", 2.80, "/images/coleslaw.png", true, "Chou blanc râpé, sauce crémeuse", Categorie.ACCOMPAGNEMENT, "chou", "entrée");
@@ -47,7 +50,6 @@ public class Facade extends SujetObserve implements Iterable<Article>{
 
     public void supprimer(Article article){
         collectionArticle.supprimer(article);
-        notifierObservateur();
     }
 
     public void setCategorieSelectionnee(String categorie){
@@ -74,7 +76,6 @@ public class Facade extends SujetObserve implements Iterable<Article>{
     }
     public void setModeEdition(boolean b){
         collectionArticle.setModeEdition(b);
-        notifierObservateur();
     }
 
     public Iterator<Article> iteratorFiltre() {
@@ -84,5 +85,28 @@ public class Facade extends SujetObserve implements Iterable<Article>{
     @Override
     public Iterator<Article> iterator() {
         return collectionArticle.iterator() ;
+    }
+
+    public boolean estModeEdition() {
+        return collectionArticle.estModeEdition() ;
+    }
+
+    public void setIndexArticleCourant(Article a){
+        collectionArticle.setIndexArticleCourant(a);
+    }
+
+    public boolean estmodeAjout() {
+        return modeAjout;
+    }
+
+    public void setModeAjout(boolean b){
+        this.modeAjout = b ;
+    }
+
+    public void ajouterNouvel() {
+        Article a = new Article("Plat", 2.99, "/images/default_image.jpg", true, "Un super plat ! ", Categorie.PLAT);
+        collectionArticle.ajouter(a);
+        setCategorieSelectionnee("Plat");
+        setIndexArticleCourant(a);
     }
 }

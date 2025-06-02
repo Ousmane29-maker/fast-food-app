@@ -84,4 +84,8 @@ public class Article {
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
+
+    public void setMotsCles(ArrayList<String> mots_cles) {
+        motsCles = mots_cles ;
+    }
 }

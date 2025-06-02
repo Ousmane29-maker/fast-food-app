@@ -14,11 +14,14 @@ public class VueGlobale implements Observateur {
     private TilePane tilePane ;
 
     private Facade facade ;
+    private GestionnaireDeVues gestionnaireDeVues;
 
-    public VueGlobale(Facade facade){
+    public VueGlobale(Facade facade, GestionnaireDeVues gestionnaireDeVues){
         this.facade = facade ;
         facade.ajouterObservateur(this);
+        this.gestionnaireDeVues = gestionnaireDeVues ;
     }
+
 
 
     @FXML
@@ -39,6 +42,11 @@ public class VueGlobale implements Observateur {
                 loader.setControllerFactory(ic -> new VignetteArticle(facade, article));
                 // Charger le composant (la vignette)
                 Node vignette = loader.load();
+                vignette.setOnMouseClicked(e -> {
+                    facade.setIndexArticleCourant(article);
+                    gestionnaireDeVues.afficherVueDetails();
+                });
+
                 // Ajouter la vignette dans le TilePane
                 tilePane.getChildren().add(vignette);
             }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="207.0" spacing="30.0" styleClass="vue-categorie" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/17.0.10"
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="207.0" spacing="30.0" styleClass="vue-categorie" stylesheets="@../ressources/css/style.css" xmlns="http://javafx.com/javafx/17.0.10"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueCategorie">
    <children>
       <Label styleClass="vue-categorie-label" text="Categorie" />

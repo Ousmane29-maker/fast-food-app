@@ -1,3 +1,161 @@
+
+
+/* ========================================
+   FASTFOOD APP - STYLE MAGNIFIQUE
+   Couleurs modernes et design élégant
+   ======================================== */
+
+/* Style principal */
+.root {
+    -fx-background-color: #f8f9fa;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Container principal */
+#mainContainer {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Zone d'informations article */
+.article-infos {
+    -fx-background-color: #f8f9ff;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-border-color: #e3e8ff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-font-size: 14px;
+}
+
+/* Labels */
+.info-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4f46e5;
+    -fx-font-size: 14px;
+}
+
+.info-value {
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 14px;
+}
+
+
+.section-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-font-size: 16px;
+    -fx-underline: true;
+}
+
+/* Champs de saisie */
+.text-field, .text-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #4f46e5;
+    -fx-border-width: 2px;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4f46e5;
+    -fx-border-width: 2px;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-min-height: 100px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-padding: 5px 10px;
+}
+
+.list-cell:selected {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+}
+
+/* Boutons généraux */
+.button {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 15px;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #4338ca;
+}
+
+.button:pressed {
+    -fx-background-color: #3730a3;
+}
+
+/* Bouton d'ajout */
+#ajouterMotCleButton {
+    -fx-background-color: #059669;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+#ajouterMotCleButton:hover {
+    -fx-background-color: #047857;
+}
+
+/* Bouton de sauvegarde */
+.save-button {
+    -fx-background-color: #059669;
+}
+
+.save-button:hover {
+    -fx-background-color: #047857;
+}
+
+/* Bouton d'annulation */
+.cancel-button {
+    -fx-background-color: #dc2626;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #b91c1c;
+}
+
+/* ImageView */
+#imageView {
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+
 .vignette {
     -fx-background-color: white;
     -fx-background-radius: 20;
@@ -72,3 +230,4 @@
     -fx-font-weight: bold;
     -fx-border-color: #1565c0;
 }
+

@@ -61,7 +61,7 @@ public class CollectionArticle implements Iterable<Article>{
         return filtres;
     }
 
-    public boolean isModeEdition() {
+    public boolean estModeEdition() {
         return modeEdition;
     }
 
@@ -83,5 +83,9 @@ public class CollectionArticle implements Iterable<Article>{
 
     public int getnbArticlesFiltres() {
         return getArticlesFiltres().size() ;
+    }
+
+    public void setIndexArticleCourant(Article a) {
+        indexArticleCourant = getArticlesFiltres().indexOf(a);
     }
 }
