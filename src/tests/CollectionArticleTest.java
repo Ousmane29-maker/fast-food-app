@@ -17,13 +17,13 @@ public class CollectionArticleTest {
     void setUp() {
         collection = new CollectionArticle();
 
-        a1 = new Article("Pizza", 10.5, "pizza.png", true, "Délicieuse pizza", Categorie.PLAT, "pizza", "plats", "pates");
+        a1 = new Article("Pizza", 10.5, "pizza.png", "Délicieuse pizza", Categorie.PLAT, "pizza", "plats", "pates");
         a1.setCategorie(Categorie.PLAT);
 
-        a2 = new Article("Coca", 2.5, "coca.png", true, "Boisson gazeuse", Categorie.BOISSON, "boisson", "sucre");
+        a2 = new Article("Coca", 2.5, "coca.png", "Boisson gazeuse", Categorie.BOISSON, "boisson", "sucre");
         a2.setCategorie(Categorie.BOISSON);
 
-        a3 = new Article("Tiramisu", 4.0, "tiramisu.png", false, "Dessert italien", Categorie.DESSERT,"dessert");
+        a3 = new Article("Tiramisu", 4.0, "tiramisu.png", "Dessert italien", Categorie.DESSERT,"dessert");
         a3.setCategorie(Categorie.DESSERT);
 
         collection.ajouter(a1);

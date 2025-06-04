@@ -219,6 +219,9 @@ public class VueDetails implements Observateur{
             facade.getArticleCourant().setDescription(descriptionTextArea.getText().trim());
             facade.getArticleCourant().setPrix(prix);
             facade.getArticleCourant().setCategorie(Categorie.getCategorie(categorieComboBox.getValue()));
+            if(facade.estmodeAjout()){
+                facade.setCategorieSelectionnee(Categorie.getCategorie(categorieComboBox.getValue()).getLabel());
+            }
             facade.getArticleCourant().setMotsCles(new ArrayList<>(motsClesEditListView.getItems()));
 
             if (imageTemporaire != null) {

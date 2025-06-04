@@ -14,7 +14,7 @@
           <Menu mnemonicParsing="false" text="Fichier">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#importerJson" text="Importer JSON" />
-                  <MenuItem mnemonicParsing="false" onAction="#SauvegarderJson" text="Sauvegarder JSON" />
+                  <MenuItem mnemonicParsing="false" onAction="#sauvegarderJson" text="Sauvegarder JSON" />
                   <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
             </items>
           </Menu>

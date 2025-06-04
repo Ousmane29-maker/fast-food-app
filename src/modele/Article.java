@@ -14,7 +14,7 @@ public class Article {
     private Categorie categorie;
     private List<String> motsCles;
 
-    public Article(String nom, double prix, String imgUrl, boolean disponible, String descript, Categorie categorie, String... motsCles) {
+    public Article(String nom, double prix, String imgUrl, String descript, Categorie categorie, String... motsCles) {
         this.nom = nom;
         this.prix = prix;
         this.imgUrl = imgUrl;

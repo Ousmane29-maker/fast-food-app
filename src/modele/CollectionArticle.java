@@ -1,10 +1,8 @@
 package modele;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
-public class CollectionArticle implements Iterable<Article>{
+public class CollectionArticle implements Iterable<Article> {
 
     private boolean modeEdition;
     private int indexArticleCourant;
@@ -32,7 +30,7 @@ public class CollectionArticle implements Iterable<Article>{
     }
 
     public void setIndexArticleCourant(int index) {
-        assert(index >= 0 && index < getArticlesFiltres().size()) : "l'index doit être entre 0 et nbArticlesFiltres - 1";
+        assert (index >= 0 && index < getArticlesFiltres().size()) : "l'index doit être entre 0 et nbArticlesFiltres - 1";
         this.indexArticleCourant = index;
 
     }
@@ -46,10 +44,13 @@ public class CollectionArticle implements Iterable<Article>{
     }
 
     public Article getArticleCourant() {
-        assert (indexArticleCourant >= 0 && indexArticleCourant < getArticlesFiltres().size()) : "l'index doit être entre 0 et nbArticlesFiltres - 1" ;
-        return getArticlesFiltres().get(indexArticleCourant);
-
+        List<Article> articles = getArticlesFiltres();
+        if (indexArticleCourant < 0 || indexArticleCourant >= articles.size()) {
+            throw new IndexOutOfBoundsException("Index " + indexArticleCourant + " hors limites pour une liste de taille " + articles.size());
+        }
+        return articles.get(indexArticleCourant);
     }
+
 
     public List<Article> getArticlesFiltres() {
         List<Article> filtres = new ArrayList<>();
@@ -73,19 +74,40 @@ public class CollectionArticle implements Iterable<Article>{
     public Iterator<Article> iterator() {
         return articles.iterator();
     }
+
     public Iterator<Article> iteratorFiltre() {
         return getArticlesFiltres().iterator();
     }
 
     public int getnbArticles() {
-        return articles.size() ;
+        return articles.size();
     }
 
     public int getnbArticlesFiltres() {
-        return getArticlesFiltres().size() ;
+        return getArticlesFiltres().size();
     }
 
     public void setIndexArticleCourant(Article a) {
         indexArticleCourant = getArticlesFiltres().indexOf(a);
+    }
+
+    public void trierParNom() {
+        Collections.sort(articles, new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return a1.getNom().compareToIgnoreCase(a2.getNom());
+            }
+        });
+
+    }
+
+    public void trierParPrix() {
+        Collections.sort(articles, new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return Double.compare(a1.getPrix(), a2.getPrix());
+            }
+        });
+
     }
 }

@@ -36,15 +36,26 @@ package "modele" {
     }
 
     class Facade extends SujetObserve implements Iterable<Article>{
-        + void ajouter(String nom, double prix, String imgUrl, boolean disponible, String descript, Categorie categorie, String... motsCles)
-        + void supprimer(Article article)
-        + void setCategorieSelectionnee(String categorie)
-        + Article getArticleCourant()
-        + void precedent()
-        + void suivant()
-        + void setModeEdition()
-        + Iterator<Article> iterator()
-        + Iterator<Article> iteratorFiltres()
+           - modeAjout : boolean
+          + Facade()
+          + ajouter(nom: String, prix: double, imgUrl: String, descript: String, categorie: Categorie, motsCles: String...)
+          + supprimer(article: Article)
+          + setCategorieSelectionnee(categorie: String)
+          + getArticleCourant() : Article
+          + precedent()
+          + suivant()
+          + setModeEdition(b: boolean)
+          + iteratorFiltre() : Iterator<Article>
+          + iterator() : Iterator<Article>
+          + estModeEdition() : boolean
+          + setIndexArticleCourant(a: Article)
+          + estmodeAjout() : boolean
+          + setModeAjout(b: boolean)
+          + ajouterNouvel()
+          + sauvegarderJSON(cheminFichier: String)
+          + chargerJSON(cheminFichier: String)
+          + trierArticlesParNom()
+          + trierArticlesParPrix()
 
     }
 
@@ -52,14 +63,23 @@ package "modele" {
         - boolean modeEdition
         - int indexArticleCourant
         + CollectionArticle()
-        + void ajouter(Article article)
-        + void supprimer(Article article)
-        + void setCategorieSelectionnee(Categorie categorie)
-        + void setIndexArticleCourant(int index)
-        + void setModeEdition()
-        + int getIndexArticleCourant()
-        + Article getArticleCourant()
-        + List<Article> getArticlesFiltres()
+          + ajouter(article: Article)
+          + supprimer(article: Article)
+          + setCategorieSelectionnee(categorie: Categorie)
+          + setIndexArticleCourant(index: int)
+          + setModeEdition(b: boolean)
+          + getIndexArticleCourant() : int
+          + getArticleCourant() : Article
+          + getArticlesFiltres() : List<Article>
+          + estModeEdition() : boolean
+          + getCategorieSelectionnee() : Categorie
+          + iterator() : Iterator<Article>
+          + iteratorFiltre() : Iterator<Article>
+          + getnbArticles() : int
+          + getnbArticlesFiltres() : int
+          + setIndexArticleCourant(a: Article)
+          + trierParNom()
+          + trierParPrix()
 
     }
 
@@ -89,16 +109,28 @@ package "vues" {
         + setCategorieToDessert()
     }
     class VueGlobale {
+    +VueGlobale(Facade facade, GestionnaireDeVues gestionnaireDeVues)
         + void reagir()
     }
     class VueDetaillee {
-        + VueDetaillee(Facade facade)
-        + void reagir()
-        + void precedent()
-        + void suivant()
-        + void home()
-        + void modeEdition()
-        + void EnregistrerArticle()
+        + VueDetails(Facade facade, GestionnaireDeVues gestionnaireDeVues)
+            + void initialize()
+            + void afficherModeConsultation()
+            + void afficherModeEdition()
+            + void afficherDonnees()
+            + void remplirChampsEdition()
+            + void ajouterMotCle()
+            + void sauvegarder()
+            + void annuler()
+            + void basculerModeEdition()
+            + void precedent()
+            + void suivant()
+            + void home()
+            + void choisirImage(ActionEvent event)
+            + void reagir()
+            - void chargerTousLesMotsCles()
+            - void configurerListViewEdition()
+            - void showAlert(String titre, String message)
     }
 
     class VignetteArticle{
@@ -114,10 +146,16 @@ package "vues" {
         + void importerJson()
         + void SauvegarderJson()
         + void quitter()
-        + void modeConsultation()
-        + void modeEdition()
         + void trierParNom()
         + void trierParPrix()
+     }
+
+     class GestionnaireDeVues {
+       + GestionnaireDeVues(rootPane: BorderPane, facade: Facade)
+       + void setVueMenu(vueMenu: Node)
+       + void setVueGlobale(vueGlobale: Node, vueCategorie: Node)
+       + void afficherVueGlobale()
+       + void afficherVueDetails()
      }
 
 }
@@ -135,7 +173,8 @@ Observateur <|.. VueMenu
 VueDetaillee --"3" TextField
 VueDetaillee --"1" TextArea
 VueDetaillee --"1" CheckBox
-VueMenu --"1" MenuItem : modeEdition
+VueDetaillee --"1" GestionnaireDeVues
+VueGlobale --"1" GestionnaireDeVues
 
 
 

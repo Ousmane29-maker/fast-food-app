@@ -1,0 +1,307 @@
+{
+  "version": "1.0",
+  "dateExport": "2025-06-04T21:57:07.687462",
+  "articles": [
+    {
+      "nom": "Risotto Poulet",
+      "prix": 11.6,
+      "imgUrl": "/images/plat_2.png",
+      "description": "Riz crémeux et tendre poulet",
+      "categorie": "PLAT",
+      "motsCles": [
+        "riz",
+        "poulet"
+      ]
+    },
+    {
+      "nom": "Falafel",
+      "prix": 7.4,
+      "imgUrl": "/images/falafel.png",
+      "description": "Boulettes végétariennes",
+      "categorie": "PLAT",
+      "motsCles": [
+        "pois chiche",
+        "végétarien"
+      ]
+    },
+    {
+      "nom": "Nuggets",
+      "prix": 6.99,
+      "imgUrl": "/images/nuggets.png",
+      "description": "Croquants et dorés",
+      "categorie": "PLAT",
+      "motsCles": [
+        "poulet",
+        "frit"
+      ]
+    },
+    {
+      "nom": "Salade César",
+      "prix": 7.5,
+      "imgUrl": "/images/saladcesar.png",
+      "description": "Salade romaine et poulet grillé",
+      "categorie": "PLAT",
+      "motsCles": [
+        "salade",
+        "poulet",
+        "croutons"
+      ]
+    },
+    {
+      "nom": "Risotto Crevette",
+      "prix": 8.3,
+      "imgUrl": "/images/risottocrevette.png",
+      "description": "Épicé et savoureux",
+      "categorie": "PLAT",
+      "motsCles": [
+        "curry",
+        "végétarien"
+      ]
+    },
+    {
+      "nom": "Veggie Wrap",
+      "prix": 7.8,
+      "imgUrl": "/images/plat_1.png",
+      "description": "Wrap aux légumes grillés",
+      "categorie": "PLAT",
+      "motsCles": [
+        "légumes",
+        "wrap",
+        "sans viande"
+      ]
+    },
+    {
+      "nom": "Burger Poulet",
+      "prix": 6.99,
+      "imgUrl": "/images/burger_poulet.png",
+      "description": "Poulet croustillant et laitue",
+      "categorie": "PLAT",
+      "motsCles": [
+        "poulet",
+        "croustillant"
+      ]
+    },
+    {
+      "nom": "Cheeseburger",
+      "prix": 7.99,
+      "imgUrl": "/images/cheeseburger.png",
+      "description": "Avec du bacon croustillant",
+      "categorie": "PLAT",
+      "motsCles": [
+        "bacon",
+        "salé"
+      ]
+    },
+    {
+      "nom": "Veggie vert",
+      "prix": 9.99,
+      "imgUrl": "/images/plat_3.png",
+      "description": "Salade romaine, oeuf et sauce tomate",
+      "categorie": "PLAT",
+      "motsCles": [
+        "bacon",
+        "salé"
+      ]
+    },
+    {
+      "nom": "Petite Salade",
+      "prix": 3.5,
+      "imgUrl": "/images/petitesalade.png",
+      "description": "Salade verte fraîche",
+      "categorie": "ACCOMPAGNEMENT",
+      "motsCles": [
+        "salade",
+        "légumes",
+        "entrée"
+      ]
+    },
+    {
+      "nom": "Coleslaw",
+      "prix": 2.8,
+      "imgUrl": "/images/coleslaw.png",
+      "description": "Chou blanc râpé, sauce crémeuse",
+      "categorie": "ACCOMPAGNEMENT",
+      "motsCles": [
+        "chou",
+        "entrée"
+      ]
+    },
+    {
+      "nom": "Salade Tomate",
+      "prix": 3.9,
+      "imgUrl": "/images/saladetomate.png",
+      "description": "Tomates fraîches et basilic",
+      "categorie": "ACCOMPAGNEMENT",
+      "motsCles": [
+        "tomate",
+        "entrée"
+      ]
+    },
+    {
+      "nom": "Taboulé",
+      "prix": 3.6,
+      "imgUrl": "/images/taboule.png",
+      "description": "Semoule, menthe, citron",
+      "categorie": "ACCOMPAGNEMENT",
+      "motsCles": [
+        "semoule",
+        "fraîcheur"
+      ]
+    },
+    {
+      "nom": "Frites",
+      "prix": 2.5,
+      "imgUrl": "/images/frites.png",
+      "description": "Frites croustillantes",
+      "categorie": "ACCOMPAGNEMENT",
+      "motsCles": [
+        "pommes de terre",
+        "frit",
+        "classique"
+      ]
+    },
+    {
+      "nom": "Tarte",
+      "prix": 4.5,
+      "imgUrl": "/images/tarte.png",
+      "description": "Tarte croustillante aux fruits de saison",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "fruit",
+        "pâtisserie",
+        "frais"
+      ]
+    },
+    {
+      "nom": "Moelleux",
+      "prix": 5.0,
+      "imgUrl": "/images/moelleux.png",
+      "description": "Gâteau fondant au chocolat noir",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "chocolat",
+        "gâteau",
+        "fondant"
+      ]
+    },
+    {
+      "nom": "Cake",
+      "prix": 3.2,
+      "imgUrl": "/images/cake.png",
+      "description": "Petit cake moelleux au citron",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "citron",
+        "léger",
+        "moelleux"
+      ]
+    },
+    {
+      "nom": "Tiramisu",
+      "prix": 5.2,
+      "imgUrl": "/images/tiramisu.png",
+      "description": "Tiramisu au café doux et mascarpone",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "café",
+        "italien",
+        "crémeux"
+      ]
+    },
+    {
+      "nom": "Crumble",
+      "prix": 4.1,
+      "imgUrl": "/images/crumble.png",
+      "description": "Crumble aux pommes caramélisées",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "pomme",
+        "croquant",
+        "fruit"
+      ]
+    },
+    {
+      "nom": "Panna",
+      "prix": 4.3,
+      "imgUrl": "/images/panna.png",
+      "description": "Panna cotta à la vanille et fruits rouges",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "fruit",
+        "crémeux",
+        "italien"
+      ]
+    },
+    {
+      "nom": "Éclair",
+      "prix": 3.9,
+      "imgUrl": "/images/eclair.png",
+      "description": "Éclair au chocolat fondant",
+      "categorie": "DESSERT",
+      "motsCles": [
+        "chocolat",
+        "pâtisserie",
+        "gâteau"
+      ]
+    },
+    {
+      "nom": "Virgin Mojito",
+      "prix": 4.5,
+      "imgUrl": "/images/virginmojito.png",
+      "description": "Menthe, citron vert, eau pétillante",
+      "categorie": "BOISSON",
+      "motsCles": [
+        "sans alcool",
+        "menthe",
+        "rafraîchissant"
+      ]
+    },
+    {
+      "nom": "Sunset Punch",
+      "prix": 5.2,
+      "imgUrl": "/images/sunsetpunch.png",
+      "description": "Jus d\u0027orange, grenadine, fruits",
+      "categorie": "BOISSON",
+      "motsCles": [
+        "fruité",
+        "sans alcool"
+      ]
+    },
+    {
+      "nom": "Berry Mix",
+      "prix": 5.0,
+      "imgUrl": "/images/berrymix.png",
+      "description": "Fruits rouges mixés",
+      "categorie": "BOISSON",
+      "motsCles": [
+        "baies",
+        "cocktail",
+        "frais"
+      ]
+    },
+    {
+      "nom": "Ridged",
+      "prix": 2.0,
+      "imgUrl": "/images/ridged.png",
+      "description": "Boisson gazeuse classique",
+      "categorie": "BOISSON",
+      "motsCles": [
+        "cola",
+        "canette",
+        "gazeux"
+      ]
+    },
+    {
+      "nom": "Peroni",
+      "prix": 2.0,
+      "imgUrl": "/images/peroni.png",
+      "description": "Citron-lime pétillant",
+      "categorie": "BOISSON",
+      "motsCles": [
+        "citron",
+        "gazeux",
+        "canette"
+      ]
+    }
+  ]
+}
