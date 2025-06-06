@@ -25,6 +25,7 @@ public class Facade extends SujetObserve implements Iterable<Article>{
                 .serializeNulls() // Inclure les valeurs null
                 .create();
 
+
     }
 
 
