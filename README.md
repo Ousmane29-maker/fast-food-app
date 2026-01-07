@@ -7,19 +7,19 @@ Application desktop JavaFX avec architecture **MVC + Observer** pour la gestion 
 ## 📸 Aperçu de l'Application
 
 ### Vue Globale Plats
-![Vue Globale](../../../../../readme_project/vue_globale1.png)
+![Vue Globale](screenshots/vue_globale1.png)
 *Affichage en grille de tous les Plats*
 
 ### Vue Globale Desserts
-![Vue Globale](../../../../../readme_project/vue_globale2.png)
+![Vue Globale](screenshots/vue_globale2.png)
 *Affichage en grille de tous les Dessert*
 
 ### Vue Globale Boissons
-![Vue Globale](../../../../../readme_project/vue_globale3.png)
+![Vue Globale](screenshots/vue_globale3.png)
 *Affichage en grille de tous les Boissons*
 
 ### Mode Édition
-![Mode Édition](../../../../../readme_project/mode_edition.png)
+![Mode Édition](screenshots/mode_edition.png)
 *Interface de modification avec champs éditables et gestion des images*
 
 ---
